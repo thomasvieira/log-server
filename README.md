@@ -1,16 +1,17 @@
 ## Usage
 
 ## Pre-requisites
-Fully configured MongoDB Atlas Cluster running
-.env with following key=value pairs
++ Fully configured MongoDB Atlas Cluster running(local or cloud);
+
++ .env file in root dir with following key=value pairs inside (you must use your cluster connection string and any private unique key string)
 ```
 MONGODB_CONNECTION_STRING = mongodb+srv://<username>:<password>@sandbox.clusterid.mongodb.net/logserver?retryWrites=true&w=majority
 API_KEY = d581b9dYourUniqueKey0941d4321
 ```
-or you can config environment variables
++ or you can config environment variables instead:
 ```
-MONGODB_CONNECTION_STRING
-API_KEY
+MONGODB_CONNECTION_STRING=yourConnectionStringGoesHere
+API_KEY=yourPrivateUniqueKeyGoesHere
 ```
 Note: You can get your connection URI from [cloud.mongodb.com](https://cloud.mongodb.com/) in Atlas > Databases > Connect
 
