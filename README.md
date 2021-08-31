@@ -3,6 +3,10 @@
 ## Pre-requisites
 + Fully configured MongoDB Atlas Cluster running(local or cloud);
 
++ You may create an index with TTL(time to live) for auto delete documents(records)
+ after an amount of seconds has passed. In my case it is set to 2592000 seconds, that is
+ equivalent to 30 days. You can [find more about TTL here](https://docs.mongodb.com/manual/tutorial/expire-data/)
+
 + .env file in root dir with following key=value pairs inside (you must use your cluster connection string and any private unique key string)
 ```
 MONGODB_CONNECTION_STRING = mongodb+srv://<username>:<password>@sandbox.clusterid.mongodb.net/logserver?retryWrites=true&w=majority
