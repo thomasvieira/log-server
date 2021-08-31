@@ -34,4 +34,3 @@ app.use(
 console.log('Rocket Launched');
 console.log('Server running on port ', process.env.PORT || 3333);
 app.listen(process.env.PORT || 3333);
-//inicializaServicos();

@@ -18,8 +18,6 @@ logRouter.post('/', ensureAuthenticated, async (request, response) => {
       message: message,
       createdAt: new Date(),
     });
-
-    // console.log({ level, message });
   } finally {
     await client.close();
   }

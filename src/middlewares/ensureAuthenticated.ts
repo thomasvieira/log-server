@@ -1,15 +1,7 @@
 import { error } from 'console';
 import { Request, Response, NextFunction } from 'express';
-import { verify } from 'jsonwebtoken';
 
-import authConfig from '../config/auth';
 import AppError from '../errors/AppError';
-
-interface TokenPayload {
-  iat: number;
-  exp: number;
-  sub: string;
-}
 
 export default function ensureAuthenticated(
   request: Request,
@@ -37,6 +29,6 @@ export default function ensureAuthenticated(
       throw new error();
     }
   } catch {
-    throw new AppError('Invalid Token', 401);
+    throw new AppError('Invalid API Key', 401);
   }
 }
