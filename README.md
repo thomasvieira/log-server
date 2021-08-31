@@ -52,7 +52,7 @@ $ yarn build (or `npm run build`)
 With server up and running you can post your logs to http://localhost:3333/log with HTTP method POST, with authentication Header type bearer token with your API_KEY
 
 Example of header using Insomnia
-![Header Example Insomnia](https://github.com/thomasvieira/log-server/blob/main/assets/BodySample.jpg)
+![Header Example Insomnia](https://github.com/thomasvieira/log-server/blob/main/assets/authenticationHeader.jpg)
 
 Example of body using Insomnia
-![Header Example Insomnia](https://github.com/thomasvieira/log-server/blob/main/assets/authenticationHeader.jpg')
+![Header Example Insomnia](https://github.com/thomasvieira/log-server/blob/main/assets/BodySample.jpg)
