@@ -26,4 +26,43 @@ logRouter.post('/', ensureAuthenticated, async (request, response) => {
   });
 });
 
+logRouter.get('/', async (request, response) => {
+  const { from } = request.query;
+  let resultado;
+  let logCollection;
+
+  const client = await connection();
+
+  try {
+    logCollection = client.db('logserver').collection('logs');
+    resultado = await logCollection
+      .find({ createdAt: { $gt: new Date('2021-09-16T12:00:00.000-03:00') } })
+      .sort({ createdAt: 1 })
+      .toArray();
+  } finally {
+    //await client.close();
+  }
+
+  var pagina = `<html>
+      <head>Log Server</head>
+      <body>
+        <h1>
+          Lista de Logs
+        </h1>
+        <ul>
+        `;
+  resultado.forEach(log => {
+    pagina = pagina + `<li>${JSON.stringify(log)}</li>`;
+  });
+
+  pagina =
+    pagina +
+    `
+        </ul>
+      </body>
+    </html>`;
+
+  return response.send(pagina);
+});
+
 export default logRouter;
